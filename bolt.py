@@ -24,7 +24,7 @@ class Robot:
         # constants for edge-following
         self.THRESHOLD = (self.color_sensor_left.reflection() + self.color_sensor_right.reflection()) / 2
         self.TURN_SPEED = 67.5
-        self.STRAIGHT_SPEED = -150
+        self.STRAIGHT_SPEED = -150 # Negative speed = forward, because of the EV3 bricks orientation 
 
         self.IS_DRIVING = False
 
@@ -81,7 +81,8 @@ class Robot:
                 self.robot_drivebase.drive(100, 0)
                 wait(self.RANDOM_BACKWARDS_TIME)
                 self.robot_drivebase.stop()
-                
+
+                # was used for debugging turning angle
                 print("turning angle:", self.RANDOM_TURN_ANGLE)
                 self.robot_drivebase.turn(self.RANDOM_TURN_ANGLE)
                 
