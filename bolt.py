@@ -96,7 +96,7 @@ class Robot:
             wait(10)  # Small delay for stability
 
     def check_sensors(self):
-        """Main drive method for edge-following"""
+        """Sensor checking for the drive method"""
         LEFT_INTENSITY = self.color_sensor_left.reflection()
         RIGHT_INTENSITY = self.color_sensor_right.reflection()
         return LEFT_INTENSITY, RIGHT_INTENSITY
